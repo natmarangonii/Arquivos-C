@@ -1,0 +1,55 @@
+//biblioteca
+#include <locale.h>
+#include <stdio.h>
+
+//definir variáveis no struct
+    struct Aluno {
+    char nome[50];
+    float nota1;
+    float nota2;
+    float nota3;
+};
+
+int main() {
+    struct Aluno aluno;
+    float media;
+    
+    //inserir nome do aluno
+    printf("Digite o nome do aluno: ");
+    //guardar informaçao
+    scanf("%s", aluno.nome);
+    
+    //informar nota
+    printf("Digite a primeira nota: ");
+    //guardar informaçao        
+    scanf("%f", &aluno.nota1);
+    
+    //informar segunda nota
+    printf("Digite a segunda nota: ");
+    //guardar informaçao
+    scanf("%f", &aluno.nota2);
+    
+    //informar terceira nota
+    printf("Digite a terceira nota: ");
+    //guardar informaçao
+    scanf("%f", &aluno.nota3);
+
+    media = (aluno.nota1 + aluno.nota2 + aluno.nota3) / 3; //realizar calculo da media
+    
+    //mostrar ao usuario a ficha do aluno
+    printf("\nAluno: %s\n", aluno.nome);
+    printf("Media: %.2f\n", media);
+    
+    //comparar notas para saber se esta aprovado ou reprovado
+    //caso seja aprovado
+    if (media >= 6.0) { 
+        printf("Resultado: Aprovado\n");
+        
+    // caso seja reprovado
+    } else { //Esse else é para indicar que se o aluno tirar menos que 6 esta reprovado
+        printf("Resultado: Reprovado\n");
+    }
+    
+    //encerrar programa
+    return 0;
+}
