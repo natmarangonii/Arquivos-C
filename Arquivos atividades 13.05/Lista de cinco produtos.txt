@@ -1,0 +1,48 @@
+//biblioteca
+#include <locale.h>
+#include <stdio.h>
+
+//definir variáveis 
+    struct Produto {
+    char nome[30];
+    float preco;
+    int quantidade;
+};
+
+int main() {
+    
+    //indica cinco produtos
+    struct Produto produtos[5];
+    
+    //indicar para o usuario indicar as informações cinco vezes
+    for (int i = 0; i < 5; i++) {
+        printf("Produto %d:\n", i + 1);
+
+        printf("Nome: ");
+        scanf(" %[^\n]", produtos[i].nome);
+
+        printf("Preço: ");
+        scanf("%f", &produtos[i].preco);
+
+        printf("Quantidade: ");
+        scanf("%d", &produtos[i].quantidade);
+
+        printf("\n");
+    }
+    
+    //indicar a resposta
+    printf("\nTotal por produto:\n"); 
+    
+    //For usado para indicar os cinco produtos cadastrados
+    for (int i = 0; i < 5; i++) { 
+        float total = produtos[i].preco * produtos[i].quantidade;
+        printf("Produto: %s | Preço: R$%.2f | Quantidade: %d | Total: R$%.2f\n",
+               produtos[i].nome,
+               produtos[i].preco,
+               produtos[i].quantidade,
+               total);
+    }
+    
+    //encerrar programa
+    return 0;
+}

@@ -1,0 +1,65 @@
+//biblioteca
+#include <locale.h>
+#include <stdio.h>
+
+//definir variáveis no struct
+    struct Aluno {
+    char nome[50];
+    int idade;
+    float nota;
+};
+
+int main() {
+    struct Aluno alunos[3];
+    char nomeBusca[50];
+    int i;
+    int encontrado = 0;
+
+    printf("Cadastro de 3 alunos:\n");
+    
+    //"for" para cadastrar tres alunos
+    for (i = 0; i < 3; i++) { 
+        printf("\nAluno %d:\n", i + 1);
+        printf("Nome: ");
+        scanf("%s", alunos[i].nome);
+        printf("Idade: ");
+        scanf("%d", &alunos[i].idade);
+        printf("Nota: ");
+        scanf("%f", &alunos[i].nota);
+    }
+    
+    //buscar pelo aluno cadastrado
+    printf("\nDigite o nome do aluno que deseja buscar: "); 
+    scanf("%s", nomeBusca);
+    
+    //"for" para detectar os alunos
+    for (i = 0; i < 3; i++) { 
+        int I = 0;
+        int iguais = 1;
+        while (alunos[i].nome[I] != '\0' || nomeBusca[I] != '\0') {
+            if (alunos[i].nome[I] != nomeBusca[I]) {
+                iguais = 0;
+                break;
+            }
+            I++;
+        }
+        
+        //motrar informaçoes pesquisadas 
+        if (iguais) { 
+            printf("\nAluno encontrado:\n");
+            printf("Nome: %s\n", alunos[i].nome);
+            printf("Idade: %d\n", alunos[i].idade);
+            printf("Nota: %.2f\n", alunos[i].nota);
+            encontrado = 1;
+            break;
+        }
+    }
+    
+    //caso o programa nao encontre o
+    if (!encontrado) { 
+        printf("\nAluno não encontrado.\n");
+    }
+    
+    //encerrar programa
+    return 0;
+}

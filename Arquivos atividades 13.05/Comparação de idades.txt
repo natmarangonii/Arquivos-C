@@ -1,0 +1,45 @@
+//biblioteca
+#include <locale.h>
+#include <stdio.h>
+
+//definir variáveis no struct
+    struct Pessoa {
+    char nome[100];
+    int idade;
+};
+
+int main() {
+    struct Pessoa pessoa1, pessoa2;
+    
+    //pedir ao usuario o nome da primeira pessoa
+    printf("Digite o nome da primeira pessoa: ");  
+    //guardar o nome na memoria
+    scanf("%s", pessoa1.nome);
+    
+    //pedir ao usuario a idade
+    printf("Digite a idade da primeira pessoa: ");
+    //guardar a idade na memoria
+    scanf("%d", &pessoa1.idade);
+    
+    //pedir ao usuario o nome da segunda pessoa
+    printf("Digite o nome da segunda pessoa: "); 
+    //guardar o nome na memoria
+    scanf("%s", pessoa2.nome);
+    
+    //pedir ao usuario a idade da segunda pessoa
+    printf("Digite a idade da segunda pessoa: ");
+    //guardar a idade na memoria
+    scanf("%d", &pessoa2.idade);
+    
+    //If Else para comparar as idades
+    if (pessoa1.idade > pessoa2.idade) { 
+        printf("%s é mais velha que %s.\n", pessoa1.nome, pessoa2.nome);
+    } else if (pessoa2.idade > pessoa1.idade) {
+        printf("%s é mais velha que %s.\n", pessoa2.nome, pessoa1.nome);
+    } else { //Esse else serve para indicar que as duas pessoas tem a mesma
+        printf("%s e %s têm a mesma idade.\n", pessoa1.nome, pessoa2.nome);
+    }
+    
+    //encerrar programa
+    return 0;
+}
