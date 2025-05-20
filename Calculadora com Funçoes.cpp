@@ -7,7 +7,7 @@ int subtrai (int v1, int v2);
 float dividir (float v1, float v2);
 void multiplica (int v1, int v2);
 int menu();
-void media (float v1, float v2); 
+void media (int v1, int v2); 
 
 int main(){
     
@@ -46,7 +46,7 @@ int main(){
         //media
         case 5: 
         printf ("Informe os numeros:\n");
-        scanf ("%.2f %.2f", &a, &b);
+        scanf ("%d %d", &a, &b);
         media (a, b);
         
     }
@@ -88,9 +88,9 @@ int main(){
     }
     
     //funçao da media 
-    void media (float v1, float v2){
+    void media (int v1, int v2){
         int res = (v1 + v2)/2;
-        printf ("Resultado da media: %.2f", res);
+        printf ("Resultado da media: %d", res);
     }
     
     //seleçao da opçao
